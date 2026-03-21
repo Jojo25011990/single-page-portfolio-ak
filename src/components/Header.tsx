@@ -9,32 +9,32 @@ import ProfileImage from "../assets/images/image-profile-desktop.webp";
 
 const Header = () => {
 	return (
-		<header className="relative w-full  flex justify-center px-5">
-			<div className="relative w-full max-w-[1100px] h-[720px] header-wrapper">
+		<header className="relative w-full flex justify-center px-5">
+			<div className="relative w-full max-w-275 h-180 header-wrapper">
 				<Menu isHeader={true} />
 
-				<div className="relative left-0 top-[160px] z-20 w-full max-w-[706px] h-full max-h-[407px] header-content">
+				<div className="relative left-0 top-40 z-20 w-full max-w-176.5 h-full max-h-101.75 header-content">
 					<Title />
 					<Message
 						description="Based in the UK, I'm a front-end developer passionate about building accessible web apps that users love."
-						className="mb-[66px] max-w-[445px]"
+						className="mb-16.5 max-w-111.25"
 					/>
 					<Button isForm={false} />
 				</div>
 
 				<Image
 					srcImg={RingsImage}
-					altImg="Background Image - White Rings"
-					className="top-[180px] left-[-272px] ring-img"
+					altImg=""
+					className="top-45 -left-68 ring-img"
 				/>
 				<Image
 					srcImg={CircleImage}
-					altImg="Background Image - White Circle"
-					className="z-20 top-[521px] right-[382.5px] circle-img"
+					altImg=""
+					className="z-20 top-130.25 right-[382.5px] circle-img"
 				/>
 				<Image
 					srcImg={ProfileImage}
-					altImg="Adam Keyes - Frontend Developer"
+					altImg="Portrait of Adam Keyes - Frontend Developer"
 					className="z-10 right-0 top-0 h-full object-cover author-img"
 				/>
 			</div>

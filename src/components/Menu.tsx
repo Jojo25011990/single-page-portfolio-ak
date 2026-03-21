@@ -7,35 +7,49 @@ type MenuProps = {
 
 const Menu = ({ isHeader = true }: MenuProps) => {
 	return (
-		<div
+		<nav
 			className={`w-full h-20 flex justify-between gap-10 ${
 				isHeader
-					? "relative z-20 max-w-[1100px] pt-10 pr-5 header-menu"
-					: "max-w-[1100px] pt-[47px] border-t-[1px] border-t-white footer-menu"
+					? "relative z-20 max-w-275 pt-10 pr-5 header-menu"
+					: "max-w-275 pt-11.75 border-t border-t-white footer-menu"
 			}`}
+			aria-label={isHeader ? "Main navigation" : "Footer navigation"}
 		>
 			{/* Logo - text*/}
-			<p
+			<a
+				href="/"
 				className={`font-bold text-[32px] leading-8 tracking-[-0.44px] ${
 					isHeader ? "author-logo" : ""
 				}`}
+				aria-label="Homepage"
 			>
 				adamkeyes
-			</p>
+			</a>
 			{/* End of Logo - text */}
-			<ul className="w-full max-w-[200px] flex items-center justify-between gap-2.5">
-				<MenuLink text={<FaGithub />} href="#" />
-				<MenuLink text={<FaInstagram />} href="#" />
-				<MenuLink text={<FaLinkedin />} href="#" />
-				<MenuLink text={<FaTwitter />} href="#" />
+			<ul className="w-full max-w-50 flex items-center justify-between gap-2.5">
+				<MenuLink
+					text={<FaGithub />}
+					href="https://github.com/"
+					ariaLabel="GitHub profile (opens in a new tab)"
+				/>
+				<MenuLink
+					text={<FaInstagram />}
+					href="https://www.instagram.com/"
+					ariaLabel="Instagram profile (opens in a new tab)"
+				/>
+				<MenuLink
+					text={<FaLinkedin />}
+					href="linkedin.com"
+					ariaLabel="LinkedIn profile (opens in a new tab)"
+				/>
+				<MenuLink
+					text={<FaTwitter />}
+					href="https://x.com/"
+					ariaLabel="Twitter profile (opens in a new tab)"
+				/>
 			</ul>
-		</div>
+		</nav>
 	);
 };
 
 export default Menu;
-
-// For Info
-// I named this component "Menu instead of Navigation".
-// Used div instead nav tag, because links are monstly external ( social media ) and logo, not internal nav 😉
-// Back in the day, I used to wrap everything in nav tag and call it "Navigation"🤣😅

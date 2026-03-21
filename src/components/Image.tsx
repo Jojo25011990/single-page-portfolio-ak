@@ -6,11 +6,17 @@ type ImageProps = {
 	className?: string;
 	srcImg: typeof RingsImage | typeof CircleImage | typeof ProfileImage;
 	altImg: string;
+	ariaLabel?: string;
 };
 
-const Image = ({ className = "", srcImg, altImg }: ImageProps) => {
+const Image = ({ className = "", srcImg, altImg, ariaLabel }: ImageProps) => {
 	return (
-		<img src={srcImg} alt={altImg} className={`absolute ${className}`} />
+		<img
+			src={srcImg}
+			alt={altImg}
+			className={`absolute ${className}`}
+			aria-label={ariaLabel}
+		/>
 	);
 };
 

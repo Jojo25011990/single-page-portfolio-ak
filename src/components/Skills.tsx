@@ -1,13 +1,9 @@
-type SkillsProps = {
-	isActive: boolean;
-};
-
 type Skill = {
 	title: string;
 	description: string;
 };
 
-const Skills = ({ isActive }: SkillsProps) => {
+const Skills = () => {
 	const dataSkills: Skill[] = [
 		{
 			title: "HTML",
@@ -36,15 +32,11 @@ const Skills = ({ isActive }: SkillsProps) => {
 	];
 
 	return (
-		<ul className="w-full max-w-[1100px] grid-skills pt-[72px] border-t-[1px] border-t-white">
+		<ul className="w-full max-w-275 grid-skills pt-18 border-t border-t-white">
 			{dataSkills.map((oneSkill, index) => {
 				const { title, description } = oneSkill;
 				return (
-					<li
-						key={index}
-						className={`${isActive ? "is-active" : ""}`}
-						style={{ "--i": index + 1 } as React.CSSProperties}
-					>
+					<li key={index}>
 						<h3 className="text-white font-bold text-5xl tracking-[-1.5px] leading-14">
 							{title}
 						</h3>

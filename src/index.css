@@ -21,41 +21,6 @@
 	--color-blue-primary: #6e91ca;
 }
 
-html {
-	scroll-behavior: smooth;
-}
-
-/* Logo - Adam Keyes */
-.author-logo {
-	clip-path: inset(0 100% 0 0);
-
-	animation: author-animate 1s 1s forwards ease;
-}
-
-@keyframes author-animate {
-	to {
-		clip-path: inset(0 0 0 0);
-	}
-}
-/* Logo - Adam Keyes */
-
-/* Image - Adam Keyes */
-.author-img {
-	filter: blur(20px) opacity(0.3);
-
-	animation: author-image 1s linear 1.5s forwards;
-}
-
-@keyframes author-image {
-	from {
-		filter: blur(20px) opacity(0.3);
-	}
-	to {
-		filter: blur(0) opacity(1);
-	}
-}
-/* End of Image - Adam Keyes */
-
 /* H1 - Adam Keyes */
 .author {
 	position: relative;
@@ -72,17 +37,6 @@ html {
 	height: 6px;
 
 	background-color: var(--color-success-primary);
-
-	transform: scaleX(0);
-	transform-origin: left;
-
-	animation: author-line 0.6s 2.5s forwards linear;
-}
-
-@keyframes author-line {
-	to {
-		transform: scaleX(1);
-	}
 }
 /* End of H1 - Adam Keyes */
 
@@ -134,144 +88,6 @@ html {
 /* End of Button Primary */
 
 /* Skills Section */
-.skills-heading {
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-}
-
-.skills-heading span {
-	position: relative;
-	display: inline-block;
-}
-
-.skills-heading span:nth-of-type(1).is-active {
-	opacity: 1;
-	transform: translate(0, 0);
-	animation: span-animate-01 0.35s 1s forwards;
-}
-.skills-heading span:nth-of-type(2).is-active {
-	opacity: 1;
-	transform: translate(0, 0);
-	animation: span-animate-02 0.35s 1.5s forwards;
-}
-.skills-heading span:nth-of-type(3).is-active {
-	opacity: 1;
-	transform: translate(0, 0);
-	animation: span-animate-03 0.35s 2s forwards;
-}
-.skills-heading span:nth-of-type(4).is-active {
-	opacity: 1;
-	transform: translate(0, 0);
-	animation: span-animate-04 0.35s 2.5s forwards;
-}
-.skills-heading span:nth-of-type(5).is-active {
-	opacity: 1;
-	transform: translate(0, 0);
-	animation: span-animate-05 0.35s 3s forwards;
-}
-.skills-heading span:nth-of-type(6).is-active {
-	opacity: 1;
-	transform: translate(0, 0);
-	animation: span-animate-06 0.35s 3.5s forwards;
-}
-
-@keyframes span-animate-01 {
-	0% {
-		opacity: 1;
-		transform: translate(0, 0);
-	}
-
-	70% {
-		opacity: 1;
-	}
-
-	100% {
-		opacity: 0;
-
-		transform: translate(-410px, -50px);
-	}
-}
-@keyframes span-animate-02 {
-	0% {
-		opacity: 1;
-		transform: translate(0, 0);
-	}
-
-	70% {
-		opacity: 1;
-	}
-
-	100% {
-		opacity: 0;
-
-		transform: translate(-50px, -50px);
-	}
-}
-@keyframes span-animate-03 {
-	0% {
-		opacity: 1;
-		transform: translate(0, 0);
-	}
-
-	70% {
-		opacity: 1;
-	}
-
-	100% {
-		opacity: 0;
-
-		transform: translate(300px, -50px);
-	}
-}
-@keyframes span-animate-04 {
-	0% {
-		opacity: 1;
-		transform: translate(0, 0);
-	}
-
-	70% {
-		opacity: 1;
-	}
-
-	100% {
-		opacity: 0;
-
-		transform: translate(-420px, 100px);
-	}
-}
-@keyframes span-animate-05 {
-	0% {
-		opacity: 1;
-		transform: translate(0, 0);
-	}
-
-	70% {
-		opacity: 1;
-	}
-
-	100% {
-		opacity: 0;
-
-		transform: translate(-150px, 100px);
-	}
-}
-@keyframes span-animate-06 {
-	0% {
-		opacity: 1;
-		transform: translate(0, 0);
-	}
-
-	70% {
-		opacity: 1;
-	}
-
-	100% {
-		opacity: 0;
-
-		transform: translate(200px, 100px);
-	}
-}
 
 .grid-skills {
 	display: grid;
@@ -282,27 +98,6 @@ html {
 	row-gap: 58px;
 }
 
-.grid-skills li {
-	opacity: 0;
-	transform: scale(0);
-	will-change: transform, opacity;
-}
-
-.grid-skills li.is-active {
-	animation: skills-box 0.35s forwards;
-	animation-delay: calc(var(--i) * 0.6s + 1s);
-}
-
-@keyframes skills-box {
-	from {
-		opacity: 0;
-		transform: scale(0);
-	}
-	to {
-		opacity: 1;
-		transform: scale(1);
-	}
-}
 /* End of Skills Section */
 
 /* Projects Section */
@@ -344,7 +139,9 @@ html {
 
 	opacity: 0;
 
-	transition: transform 0.3s linear, opacity 0.3s linear;
+	transition:
+		transform 0.3s linear,
+		opacity 0.3s linear;
 }
 
 .grid-project:hover .grid-project-overlay,
@@ -368,10 +165,6 @@ textarea:focus {
 	position: relative;
 	display: inline-block;
 	opacity: 0;
-	transform: translate(-150px, -50px) rotate(-180deg) scale(3);
-
-	transition: 0.3s all;
-	transition-delay: calc(0.06s * var(--i));
 }
 
 .error-message.active span {
@@ -379,220 +172,6 @@ textarea:focus {
 	opacity: 1;
 }
 /* End of Error Messages */
-
-/* Form Envelope */
-.envelope {
-	@apply relative w-[300px] h-[200px] bg-success-primary cursor-pointer;
-}
-
-.envelope__top-side {
-	position: relative;
-	top: -150px;
-	z-index: 10;
-
-	border-bottom: 150px solid var(--color-success-primary);
-
-	transform-origin: bottom;
-	transform: rotateX(180deg);
-
-	transition: all 0.8s ease;
-	transition-delay: 0.6s;
-}
-
-.envelope__bottom-side {
-	@apply absolute bottom-0 z-[5] border-b-[150px] border-b-success-tertiary;
-}
-
-.envelope__top-side,
-.envelope__bottom-side {
-	@apply border-l-[150px] border-l-transparent border-r-[150px] border-r-transparent;
-}
-
-.envelope__left-side {
-	@apply absolute left-0 border-l-[125px] border-l-success-secondary;
-}
-.envelope__right-side {
-	@apply absolute right-0 border-r-[125px] border-r-success-secondary;
-}
-
-.envelope__left-side,
-.envelope__right-side {
-	@apply top-0 z-[5] border-t-[100px] border-t-transparent border-b-[100px] border-b-transparent;
-}
-
-.envelope__letter {
-	position: absolute;
-	top: 0;
-	left: 50%;
-	transform: translateX(-50%);
-	z-index: 3;
-
-	width: 90%;
-	height: 90%;
-
-	padding: 10px;
-
-	color: var(--color-dark-overlay);
-	background-color: #fff;
-
-	transition: all 1s ease;
-}
-
-.envelope__letter h5 {
-	@apply mb-1;
-}
-
-.envelope__letter p {
-	@apply text-[10px] italic;
-}
-
-.envelope__letter .my-name {
-	@apply relative inline-block bottom-0 text-sm font-black mt-1;
-}
-
-.envelope__letter .my-name::before {
-	content: "";
-	position: absolute;
-	bottom: 0;
-	left: 0;
-
-	width: 100%;
-	height: 2px;
-
-	background-color: var(--color-success-primary);
-
-	transform: scaleX(1);
-}
-
-.envelope__heart {
-	position: absolute;
-	bottom: 40px;
-	left: 50%;
-	transform: translateX(-50%) scale(0.8);
-	z-index: 50;
-
-	width: 50px;
-	height: 50px;
-}
-
-.envelope__heart::before {
-	content: "";
-	position: absolute;
-	top: 0;
-	left: 12px;
-
-	width: 80%;
-	height: 100%;
-
-	background-color: var(--color-danger-secondary);
-
-	border-radius: 50% 50% 0 0;
-
-	transition: all 0.5s;
-
-	transform: rotate(55deg);
-}
-.envelope__heart::after {
-	content: "";
-	position: absolute;
-	top: 0;
-	right: 15px;
-
-	width: 80%;
-	height: 100%;
-
-	background-color: var(--color-danger-secondary);
-
-	border-radius: 50% 50% 0 0;
-
-	transition: all 0.5s;
-
-	transform: rotate(-55deg);
-}
-
-.envelope__heart:hover::before,
-.envelope__heart:hover::after {
-	box-shadow: 0 0 5px var(--color-danger-secondary),
-		0 0 10px var(--color-danger-secondary),
-		0 0 20px var(--color-danger-secondary);
-}
-
-@keyframes envelope-heart {
-	to {
-		opacity: 0;
-		transform: translateX(-50%) scale(2);
-	}
-}
-
-.envelope .envelope__top-side.is-open {
-	animation: flap-open 0.8s forwards ease-in-out 0.6s;
-}
-
-.envelope .envelope__letter.is-open {
-	animation: envelope-letter 3s 1.6s forwards;
-}
-
-.envelope .envelope__heart.is-open {
-	animation: envelope-heart 1s forwards;
-}
-
-.envelope__letter-lines {
-	@apply mt-2.5;
-}
-
-.line-01,
-.line-02,
-.line-03 {
-	@apply relative top-0 border-b-2 border-b-grey-primary;
-}
-
-.line-01 {
-	@apply w-[80%];
-}
-.line-02 {
-	@apply w-[60%];
-}
-.line-03 {
-	@apply w-[40%];
-}
-
-@keyframes envelope-letter {
-	0% {
-		box-shadow: none;
-		top: 0;
-		transform: translateX(-50%) scale(1) scaleY(1);
-		z-index: 3;
-	}
-	50% {
-		box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-		top: -300px;
-		transform: translateX(-50%) scale(1) scaleY(1);
-		z-index: 3;
-	}
-	60% {
-		box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-		top: -300px;
-		transform: translateX(-50%) scale(1) scaleY(1.15);
-		z-index: 999;
-	}
-	100% {
-		box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-		top: 50%;
-		transform: translateX(-50%) translateY(-50%) scale(1.25) scaleY(1.5);
-		z-index: 999;
-	}
-}
-
-@keyframes flap-open {
-	0% {
-		transform: rotateX(180deg);
-	}
-	100% {
-		z-index: 3;
-		transform: rotateX(0deg);
-	}
-}
-/* End of Form Envelope */
 
 /* End ofFooter - Form */
 
@@ -603,11 +182,11 @@ textarea:focus {
 	}
 
 	.header-content {
-		@apply max-w-[560px];
+		@apply max-w-140;
 	}
 
 	.header-content p {
-		@apply mb-[50px];
+		@apply mb-12.5;
 	}
 
 	.circle-img {
@@ -617,38 +196,20 @@ textarea:focus {
 
 @media (max-width: 950px) {
 	.header-content {
-		@apply max-w-[366px];
+		@apply max-w-91.5;
 	}
 
 	.header-content h1 {
-		@apply text-[60px] leading-[60px];
+		@apply text-[60px] leading-15;
 	}
 
 	.ring-img {
-		@apply -left-[345px] top-[166px];
+		@apply -left-86.25 top-41.5;
 	}
 
 	.circle-img {
 		@apply -right-16;
 	}
-	/* Skills Heading */
-	@keyframes span-animate-01 {
-		0% {
-			opacity: 1;
-			transform: translate(0, 0);
-		}
-
-		70% {
-			opacity: 1;
-		}
-
-		100% {
-			opacity: 0;
-
-			transform: translate(-304px, -50px);
-		}
-	}
-	/* End of Skills Heading */
 }
 
 @media (max-width: 850px) {
@@ -671,110 +232,6 @@ textarea:focus {
 	footer section > div:first-child {
 		@apply text-center;
 	}
-
-	/* Skills Heading */
-	@keyframes span-animate-01 {
-		0% {
-			opacity: 1;
-			transform: translate(0, 0);
-		}
-
-		70% {
-			opacity: 1;
-		}
-
-		100% {
-			opacity: 0;
-
-			transform: translate(-128px, -121px);
-		}
-	}
-
-	@keyframes span-animate-02 {
-		0% {
-			opacity: 1;
-			transform: translate(0, 0);
-		}
-
-		70% {
-			opacity: 1;
-		}
-
-		100% {
-			opacity: 0;
-
-			transform: translate(100px, -100px);
-		}
-	}
-
-	@keyframes span-animate-03 {
-		0% {
-			opacity: 1;
-			transform: translate(0, 0);
-		}
-
-		70% {
-			opacity: 1;
-		}
-
-		100% {
-			opacity: 0;
-
-			transform: translate(-180px, 40px);
-		}
-	}
-
-	@keyframes span-animate-04 {
-		0% {
-			opacity: 1;
-			transform: translate(0, 0);
-		}
-
-		70% {
-			opacity: 1;
-		}
-
-		100% {
-			opacity: 0;
-
-			transform: translate(60px, 40px);
-		}
-	}
-
-	@keyframes span-animate-05 {
-		0% {
-			opacity: 1;
-			transform: translate(0, 0);
-		}
-
-		70% {
-			opacity: 1;
-		}
-
-		100% {
-			opacity: 0;
-
-			transform: translate(-230px, 190px);
-		}
-	}
-
-	@keyframes span-animate-06 {
-		0% {
-			opacity: 1;
-			transform: translate(0, 0);
-		}
-
-		70% {
-			opacity: 1;
-		}
-
-		100% {
-			opacity: 0;
-
-			transform: translate(-13px, 181px);
-		}
-	}
-	/* End of Skills Heading */
 }
 
 @media (max-width: 775px) {
@@ -783,22 +240,22 @@ textarea:focus {
 	}
 
 	.author-img {
-		@apply h-[550px] relative top-0;
+		@apply h-137.5 relative top-0;
 	}
 
 	.ring-img {
-		@apply top-[83px] z-50;
+		@apply top-20.75 z-50;
 	}
 
 	.circle-img {
-		@apply top-[419px];
+		@apply top-104.75;
 	}
 	.header-wrapper {
 		@apply h-[unset] flex flex-col items-center gap-10;
 	}
 
 	.header-content {
-		@apply top-[68px] static order-2 text-center;
+		@apply top-17 static order-2 text-center;
 	}
 
 	.header-menu {
@@ -834,7 +291,7 @@ textarea:focus {
 	}
 
 	.ring-img {
-		@apply top-[126px] -left-[330px];
+		@apply top-31.5 -left-82.5;
 	}
 
 	.header-menu {
@@ -846,7 +303,7 @@ textarea:focus {
 	}
 
 	main section:last-child {
-		@apply mt-[70px];
+		@apply mt-17.5;
 	}
 
 	main h2 {
@@ -892,110 +349,6 @@ textarea:focus {
 	.btn-to-top {
 		@apply left-1/2 translate-x-[-50%];
 	}
-
-	/* Skills Heading */
-	@keyframes span-animate-01 {
-		0% {
-			opacity: 1;
-			transform: translate(0, 0);
-		}
-
-		70% {
-			opacity: 1;
-		}
-
-		100% {
-			opacity: 0;
-
-			transform: translate(32px, -278px);
-		}
-	}
-
-	@keyframes span-animate-02 {
-		0% {
-			opacity: 1;
-			transform: translate(0, 0);
-		}
-
-		70% {
-			opacity: 1;
-		}
-
-		100% {
-			opacity: 0;
-
-			transform: translate(14px, -164px);
-		}
-	}
-
-	@keyframes span-animate-03 {
-		0% {
-			opacity: 1;
-			transform: translate(0, 0);
-		}
-
-		70% {
-			opacity: 1;
-		}
-
-		100% {
-			opacity: 0;
-
-			transform: translate(-1px, -52px);
-		}
-	}
-
-	@keyframes span-animate-04 {
-		0% {
-			opacity: 1;
-			transform: translate(0, 0);
-		}
-
-		70% {
-			opacity: 1;
-		}
-
-		100% {
-			opacity: 0;
-
-			transform: translate(-14px, 60px);
-		}
-	}
-
-	@keyframes span-animate-05 {
-		0% {
-			opacity: 1;
-			transform: translate(0, 0);
-		}
-
-		70% {
-			opacity: 1;
-		}
-
-		100% {
-			opacity: 0;
-
-			transform: translate(-14px, 172px);
-		}
-	}
-
-	@keyframes span-animate-06 {
-		0% {
-			opacity: 1;
-			transform: translate(0, 0);
-		}
-
-		70% {
-			opacity: 1;
-		}
-
-		100% {
-			opacity: 0;
-
-			transform: translate(-29px, 278px);
-		}
-	}
-	/* End of Skills Heading */
 }
 
 @media (max-width: 380px) {
