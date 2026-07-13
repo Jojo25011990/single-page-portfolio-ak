@@ -12,7 +12,6 @@
 	--color-grey-primary: #d9d9d9;
 
 	--color-danger-primary: #ff6f5b;
-	--color-danger-secondary: #db3a24;
 
 	--color-success-primary: #4ee1a0;
 	--color-success-secondary: #3ec086;
@@ -156,23 +155,6 @@ input:focus,
 textarea:focus {
 	border-color: var(--color-blue-primary);
 }
-/* Error Messages */
-.error-message {
-	position: relative;
-}
-
-.error-message span {
-	position: relative;
-	display: inline-block;
-	opacity: 0;
-}
-
-.error-message.active span {
-	transform: translate(0) rotate(0) scale(1);
-	opacity: 1;
-}
-/* End of Error Messages */
-
 /* End ofFooter - Form */
 
 /* Media Query */

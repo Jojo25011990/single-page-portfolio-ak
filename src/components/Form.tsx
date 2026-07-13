@@ -117,18 +117,7 @@ const Form = () => {
 						id="name-error"
 						aria-live="polite"
 					>
-						<span style={{ "--i": 1 } as React.CSSProperties}>
-							Please
-						</span>{" "}
-						<span style={{ "--i": 2 } as React.CSSProperties}>
-							enter
-						</span>{" "}
-						<span style={{ "--i": 3 } as React.CSSProperties}>
-							your
-						</span>{" "}
-						<span style={{ "--i": 4 } as React.CSSProperties}>
-							name.
-						</span>
+						Please enter your name.
 					</p>
 				</div>
 				<div className="w-full">
@@ -158,18 +147,7 @@ const Form = () => {
 						id="email-error"
 						aria-live="polite"
 					>
-						<span style={{ "--i": 1 } as React.CSSProperties}>
-							Please
-						</span>{" "}
-						<span style={{ "--i": 2 } as React.CSSProperties}>
-							check
-						</span>{" "}
-						<span style={{ "--i": 3 } as React.CSSProperties}>
-							your
-						</span>{" "}
-						<span style={{ "--i": 4 } as React.CSSProperties}>
-							email.
-						</span>
+						Please check your email.
 					</p>
 				</div>
 				<div className="w-full h-full max-h-25">
@@ -198,18 +176,7 @@ const Form = () => {
 						id="message-error"
 						aria-live="polite"
 					>
-						<span style={{ "--i": 1 } as React.CSSProperties}>
-							Please
-						</span>{" "}
-						<span style={{ "--i": 2 } as React.CSSProperties}>
-							enter
-						</span>{" "}
-						<span style={{ "--i": 3 } as React.CSSProperties}>
-							a
-						</span>{" "}
-						<span style={{ "--i": 4 } as React.CSSProperties}>
-							message.
-						</span>
+						Please enter a message.
 					</p>
 				</div>
 				<div className="text-right">
